@@ -176,13 +176,13 @@
     /* border: solid red 2px; */
 }
 
-#modal .modal-content form .row .form-input label {
+#modal form .modal-content .row .form-input label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-#modal .modal-content form .row .form-input input {
+#modal form .modal-content .row .form-input input {
     width: 100%;
     height: 40px;
     padding: 0.5rem;
@@ -193,7 +193,7 @@
     outline: none;
 }
 
-#modal .modal-content form .row .form-input input:focus {
+#modal form .modal-content .row .form-input input:focus {
     border: 1px solid #7360ff;
 }
 

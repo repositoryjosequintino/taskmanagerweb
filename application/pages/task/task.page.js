@@ -25,4 +25,15 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
         modalBackground.classList.remove('active');
     }
 
+    $scope.create = function () {
+
+        const taskModel = {
+            title: $scope.taskModel.title,
+            description: $scope.taskModel.description,
+        }
+
+        console.log(taskModel);
+
+    }
+
 });

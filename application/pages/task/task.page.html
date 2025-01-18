@@ -96,31 +96,33 @@
 
 <section id="modal">
 
-    <div class="modal-header">
-        <p>Create new Task</p>
-    </div>
-    <div class="modal-content">
-        <form>
+    <form ng-submit="create()">
+
+        <div class="modal-header">
+            <p>Create new Task</p>
+        </div>
+        <div class="modal-content">
 
             <div class="row">
                 <div class="form-input">
                     <label>Title</label>
-                    <input type="text" placeholder="Title"/>
+                    <input type="text" placeholder="Title" ng-model="taskModel.title" />
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-input">
                     <label>Description</label>
-                    <input type="text" placeholder="Description"/>
+                    <input type="text" placeholder="Description" ng-model="taskModel.description" />
                 </div>
             </div>
 
-        </form>
-    </div>
-    <div class="modal-footer">
-        <button class="column80">Create Task</button>
-        <button ng-click="hideModal()" class="column20">Cancel</button>
-    </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="column80">Create Task</button>
+            <button type="button" ng-click="hideModal()" class="column20">Cancel</button>
+        </div>
+
+    </form>
 
 </section>
