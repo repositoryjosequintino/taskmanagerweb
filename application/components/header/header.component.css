@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    border: red solid 2px;
+    background: #002436;
+    color: #ea4f24;
+    height: 100px;
+}
+
+nav .logo img {
+    width: 160px;
+    height: 160px;
+}
+
+nav .links ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav .links ul li a {
+    color: #ea4f24;
+}
+
+nav .links ul li a.active {
+    font-weight: bold;
+}
