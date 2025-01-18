@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "Barlow";
+    src: url("/resources/fonts/Barlow/Barlow-Regular.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: "Barlow";
 }
 
 a {
