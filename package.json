@@ -8,5 +8,10 @@
   "keywords": [],
   "author": "José Quintinno",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "bootstrap": "^5.3.3"
+  }
 }
