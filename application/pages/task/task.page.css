@@ -132,10 +132,9 @@
 }
 
 #modal {
-    border: solid red 2px;
     background: white; 
     display: none; 
-    width: 80%;
+    width: 50%;
     height: auto;
     padding: 1rem;
     top: 50%;
@@ -159,4 +158,86 @@
 .modal-background.active,
 #modal.active {
     display: block;
+}
+
+#modal .modal-header {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+#modal .modal-header p {
+    margin-bottom: 0.6rem;
+}
+
+#modal .modal-content {
+    margin-top: 1rem;
+    /* border: solid red 2px; */
+}
+
+#modal .modal-content form .row .form-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#modal .modal-content form .row .form-input input {
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.9rem;
+    font-size: 16px;
+    outline: none;
+}
+
+#modal .modal-content form .row .form-input input:focus {
+    border: 1px solid #7360ff;
+}
+
+#modal .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+#modal .modal-footer button {
+    outline: none;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding: 0.6rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+#modal .modal-footer button:nth-child(1) {
+    background-color: #7360ff;
+}
+
+#modal .modal-footer button:nth-child(1):hover {
+    background-color: #5c4dd0;
+}
+
+#modal .modal-footer button:nth-child(2) {
+    background-color: #ffffff;
+    border: solid red 1px;
+    color: #c62828;
+}
+
+#modal .modal-footer button:nth-child(2):hover {
+    background-color: #c62828;
+    color: #ffffff;
+}
+
+.column20 {
+    flex: 20%;
+}
+
+.column80 {
+    flex: 80%;
 }

@@ -97,13 +97,30 @@
 <section id="modal">
 
     <div class="modal-header">
-        Create new Task
+        <p>Create new Task</p>
     </div>
     <div class="modal-content">
-        <form></form>
+        <form>
+
+            <div class="row">
+                <div class="form-input">
+                    <label>Title</label>
+                    <input type="text" placeholder="Title"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-input">
+                    <label>Description</label>
+                    <input type="text" placeholder="Description"/>
+                </div>
+            </div>
+
+        </form>
     </div>
     <div class="modal-footer">
-        <button ng-click="hideModal()">Cancel</button>
+        <button class="column80">Create Task</button>
+        <button ng-click="hideModal()" class="column20">Cancel</button>
     </div>
 
 </section>
