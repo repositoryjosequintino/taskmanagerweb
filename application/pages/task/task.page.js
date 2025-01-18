@@ -12,4 +12,17 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
         });
     });
 
+    const modal = document.getElementById('modal');
+    const modalBackground = document.querySelector('.modal-background');
+
+    $scope.showModal = function () {
+        modal.classList.add('active');
+        modalBackground.classList.add('active');
+    }
+
+    $scope.hideModal = function () {
+        modal.classList.remove('active');
+        modalBackground.classList.remove('active');
+    }
+
 });

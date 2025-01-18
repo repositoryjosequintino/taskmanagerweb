@@ -1,6 +1,6 @@
 <div class="title">
     <h2>Sumarry Tasks</h2>
-    <button>Add Task</button>
+    <button ng-click="showModal()">Add Task</button>
 </div>
 
 <div class="task-box-datatable">
@@ -91,3 +91,19 @@
     </div>
 
 </div>
+
+<div class="modal-background"></div>
+
+<section id="modal">
+
+    <div class="modal-header">
+        Create new Task
+    </div>
+    <div class="modal-content">
+        <form></form>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="hideModal()">Cancel</button>
+    </div>
+
+</section>
