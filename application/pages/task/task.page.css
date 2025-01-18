@@ -1,0 +1,20 @@
+.task-summary .line {
+    padding: 20px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab-box {
+    width: 100%;
+    border: red solid 2px;
+    padding: 20px 0px 0px 0px;
+}
+
+.tab-box .tabs {}
+
+.tab-box .tabs .tab {}
+
+.tab-box .content-box {}
+
+.tab-box .content-box .content {}
