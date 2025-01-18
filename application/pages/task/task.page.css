@@ -5,10 +5,22 @@
     align-items: center;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tab-box {
     width: 100%;
     border: red solid 2px;
     padding: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid rgba(229, 229, 229);
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .tab-box .tabs {}
