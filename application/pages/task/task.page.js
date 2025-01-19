@@ -77,6 +77,13 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
         $scope.showModal();
     }
 
+    $scope.delete = function (idParameter) {
+        taskService.delete(idParameter).then(function (response) {
+            console.log(response.data);
+            $scope.findAll();
+        });
+    }
+
     init();
 
 });
