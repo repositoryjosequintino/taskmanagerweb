@@ -80,11 +80,10 @@
 }
 
 .task-box-datatable .content-box .content table thead th {
-    text-align: center;
+    text-align: left;
 }
 
 .task-box-datatable .content-box .content table tbody tr {
-    text-align: center;
     background-color: #fff;
     transition: all 0.3s ease;
     border-radius: 5px;

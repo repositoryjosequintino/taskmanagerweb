@@ -24,55 +24,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Corporativo</td>
-                        <td>Entrevista Técnica com AZI Tecnologia</td>
-                        <td>20/01/2025</td>
-                        <td>21/01/2025</td>
-                        <td>
-                            <button>Finish</button>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Corporativo</td>
-                        <td>Entrevista Técnica com AZI Tecnologia</td>
-                        <td>20/01/2025</td>
-                        <td>21/01/2025</td>
-                        <td>
-                            <button>Finish</button>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Corporativo</td>
-                        <td>Entrevista Técnica com AZI Tecnologia</td>
-                        <td>20/01/2025</td>
-                        <td>21/01/2025</td>
-                        <td>
-                            <button>Finish</button>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Corporativo</td>
-                        <td>Entrevista Técnica com AZI Tecnologia</td>
-                        <td>20/01/2025</td>
-                        <td>21/01/2025</td>
-                        <td>
-                            <button>Finish</button>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Corporativo</td>
-                        <td>Entrevista Técnica com AZI Tecnologia</td>
-                        <td>20/01/2025</td>
-                        <td>21/01/2025</td>
+                    <tr ng-repeat="task in taskArray track by $index">
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <button>Finish</button>
                             <button>Edit</button>

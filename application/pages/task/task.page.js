@@ -1,5 +1,9 @@
 angular.module('taskManagerApplicationModule').controller('taskController', function ($scope, $http, taskService) {
 
+    function init() {
+        $scope.findAll();
+    }
+
     const tabArray = document.querySelectorAll(".tab");
     const contentArray = document.querySelectorAll(".content");
 
@@ -14,6 +18,8 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
 
     const modal = document.getElementById('modal');
     const modalBackground = document.querySelector('.modal-background');
+
+    $scope.taskArray = [];
 
     $scope.showModal = function () {
         modal.classList.add('active');
@@ -46,5 +52,16 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     function clearFormulario() {
         $scope.taskModel = {};
     }
+
+    $scope.findAll = function () {
+        taskService.findAll().then(function (response) {
+            $scope.taskArray = response.data;
+            console.log($scope.taskArray);
+        }, function (error) {
+            console.error('Erro ao buscar tarefas', error);
+        });
+    }
+
+    init();
 
 });
