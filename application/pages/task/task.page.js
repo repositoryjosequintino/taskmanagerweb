@@ -34,19 +34,17 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
 
         taskService.create(taskModel).then(function (response) {
             console.log('Tarefa criada com sucesso', response.data);
+            $scope.hideModal();
+            this.clearFormulario();
         }, function (error) {
             alert(JSON.stringify(error));
             console.error('Erro ao criar tarefa', error);
         });
 
-        // $http.post("http://localhost:8081/api/task", taskModel).then(function (response) {
-        //     console.log('Tarefa criada com sucesso', response.data);
-        //     $scope.hideModal();
-        // }, function (error) {
-        //     alert(JSON.stringify(error));
-        //     console.error('Erro ao criar tarefa', error);
-        // });
+    }
 
+    function clearFormulario() {
+        $scope.taskModel = {};
     }
 
 });
