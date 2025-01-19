@@ -19,6 +19,7 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     const modal = document.getElementById('modal');
     const modalBackground = document.querySelector('.modal-background');
 
+    $scope.taskModel = {};
     $scope.taskArray = [];
 
     $scope.showModal = function () {
@@ -60,6 +61,11 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
         }, function (error) {
             console.error('Erro ao buscar tarefas', error);
         });
+    }
+
+    $scope.upload = function (taskModelParameter) {
+        $scope.taskModel = angular.copy(taskModelParameter);
+        $scope.showModal();
     }
 
     init();

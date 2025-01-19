@@ -10,4 +10,8 @@ angular.module('taskManagerApplicationModule').service("taskService", function (
         return $http.get(URL_API);
     };
 
+    this.update = function (taskModel) {
+        return $http.put(URL_API, taskModel);
+    }
+
 });
