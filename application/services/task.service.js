@@ -2,16 +2,16 @@ angular.module('taskManagerApplicationModule').service("taskService", function (
 
     const URL_API = "http://localhost:8081/tasks";
 
-    this.create = function (taskModel) { 
-        return $http.post(URL_API, taskModel);
+    this.create = function (taskModelParameter) { 
+        return $http.post(URL_API, taskModelParameter);
     };
 
     this.findAll = function () {
         return $http.get(URL_API);
     };
 
-    this.update = function (taskModel) {
-        return $http.put(URL_API, taskModel);
+    this.update = function (taskModelParameter) {
+        return $http.put(URL_API.concat("/").concat(taskModelParameter.id), taskModelParameter);
     }
 
 });

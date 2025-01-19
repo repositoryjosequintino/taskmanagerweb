@@ -34,19 +34,28 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
 
     $scope.create = function () {
 
-        const taskModel = {
-            title: $scope.taskModel.title,
-            description: $scope.taskModel.description,
+        if (!$scope.taskModel.id) {
+            const taskModel = {
+                title: $scope.taskModel.title,
+                description: $scope.taskModel.description,
+            }
+            taskService.create(taskModel).then(function (response) {
+                console.log('Tarefa criada com sucesso', response.data);
+                $scope.findAll();
+                $scope.hideModal();
+                this.clearFormulario();
+            }, function (error) {
+                alert(JSON.stringify(error));
+                console.error('Erro ao criar tarefa', error);
+            });
+        } else {
+            taskService.update($scope.taskModel).then(function (response) {
+                console.log('Tarefa atualizada com sucesso', response.data);
+                $scope.findAll();
+                $scope.hideModal();
+                this.clearFormulario();
+            });
         }
-
-        taskService.create(taskModel).then(function (response) {
-            console.log('Tarefa criada com sucesso', response.data);
-            $scope.hideModal();
-            this.clearFormulario();
-        }, function (error) {
-            alert(JSON.stringify(error));
-            console.error('Erro ao criar tarefa', error);
-        });
 
     }
 
