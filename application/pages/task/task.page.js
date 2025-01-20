@@ -21,7 +21,6 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
 
     const modalInformativo = document.getElementById('modal-informativo');
 
-    $scope.taskModel = {};
     $scope.taskArray = [];
     $scope.taskID = 0;
 
@@ -91,6 +90,13 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
             console.log(response.data);
             $scope.findAll();
             $scope.hideModal();
+        });
+    }
+
+    $scope.completed = function (taskModelParameter) {
+        taskService.completed(taskModelParameter).then( function (response) {
+            console.log("Tarefa finalizada com sucesso", response.data);
+            $scope.findAll();
         });
     }
 

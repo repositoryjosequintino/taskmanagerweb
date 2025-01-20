@@ -18,4 +18,8 @@ angular.module('taskManagerApplicationModule').service("taskService", function (
         return $http.delete(URL_API.concat("/").concat(idParameter));
     }
 
+    this.completed = function (taskModelParameter) {
+        return $http.put(URL_API.concat("/complete/").concat(taskModelParameter.id));
+    }
+
 });

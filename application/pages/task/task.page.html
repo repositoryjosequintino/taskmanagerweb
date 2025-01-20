@@ -6,8 +6,8 @@
 <div class="task-box-datatable">
 
     <div class="tab-box">
-        <button class="tab active-tab">Waiting</button>
-        <button class="tab">Progress</button>
+        <button class="tab active-tab">All</button>
+        <button class="tab">Waiting</button>
         <button class="tab">Finished</button>
     </div>
 
@@ -19,18 +19,18 @@
                         <th>Task</th>
                         <th>Description</th>
                         <th>Start</th>
-                        <th>End</th>
+                        <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="task in taskArray track by $index">
+                    <tr ng-repeat="task in taskArray">
                         <td>{{ task.title }}</td>
                         <td>{{ task.description }}</td>
                         <td></td>
-                        <td></td>
+                        <td> {{ task.isCompleted ? 'Completed' : 'Waiting' }} </td>
                         <td>
-                            <button>Finish</button>
+                            <button ng-click="completed(task)">Finish</button>
                             <button ng-click="upload(task)">Edit</button>
                             <button ng-click="showModalInformativo(task.id)">Delete</button>
                         </td>
@@ -39,10 +39,56 @@
             </table>
         </div>
         <div class="content">
-            <h2>Progress</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Start</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="task in taskArray | filter: { isCompleted: false }">
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td></td>
+                        <td> {{ task.isCompleted ? 'Completed' : 'Waiting' }} </td>
+                        <td>
+                            <button ng-click="completed(task)">Finish</button>
+                            <button ng-click="upload(task)">Edit</button>
+                            <button ng-click="showModalInformativo(task.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="content">
-            <h2>Finished</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Start</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="task in taskArray | filter: { isCompleted: true }">
+                        <td>{{ task.title }}</td> 
+                        <td>{{ task.description }}</td>
+                        <td></td>
+                        <td> {{ task.isCompleted ? 'Completed' : 'Waiting' }} </td>
+                        <td>
+                            <button ng-click="completed(task)">Finish</button>
+                            <button ng-click="upload(task)">Edit</button>
+                            <button ng-click="showModalInformativo(task.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
