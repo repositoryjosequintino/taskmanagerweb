@@ -23,6 +23,7 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
 
     $scope.taskArray = [];
     $scope.taskID = 0;
+    $scope.isShowToastSucess = false;
 
     $scope.showModal = function () {
         modal.classList.add('active');
@@ -39,6 +40,18 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
         $scope.taskID = idParameter;
         modalInformativo.classList.add('active');
         modalBackground.classList.add('active');
+    }
+
+    $scope.showToastSuccess = function () {
+        $scope.isShowToastSucess = true;
+        $scope.hideToastSuccess();
+    }
+
+    $scope.hideToastSuccess = function () {
+        setTimeout(() => {
+            $scope.isShowToastSucess = false;
+            $scope.$apply();
+        }, 3000);
     }
 
     $scope.create = function () {
@@ -95,6 +108,7 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
             console.log(response.data);
             $scope.findAll();
             $scope.hideModal();
+            $scope.showToastSuccess();
         });
     }
 

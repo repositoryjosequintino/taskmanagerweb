@@ -146,3 +146,13 @@
         <button type="button" ng-click="hideModal()">No</button>
     </div>
 </section>
+
+<section id="toast" ng-show="isShowToastSucess" ng-class="{'success': isShowToastSucess}">
+    <div class="toast-header">
+        Success
+    </div>
+    <div class="toast-content">
+        <p>Operation completed successfully!</p>
+    </div>
+    <div class="toast-footer"></div>
+</section>
