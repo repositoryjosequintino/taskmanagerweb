@@ -30,7 +30,7 @@
                         <td></td>
                         <td> {{ task.isCompleted ? 'Completed' : 'Waiting' }} </td>
                         <td>
-                            <button ng-click="completed(task)">Finish</button>
+                            <button ng-click="completed(task)" ng-show="!task.isCompleted">Finish</button>
                             <button ng-click="upload(task)">Edit</button>
                             <button ng-click="showModalInformativo(task.id)">Delete</button>
                         </td>
@@ -56,7 +56,7 @@
                         <td></td>
                         <td> {{ task.isCompleted ? 'Completed' : 'Waiting' }} </td>
                         <td>
-                            <button ng-click="completed(task)">Finish</button>
+                            <button ng-click="completed(task)" ng-show="!task.isCompleted">Finish</button>
                             <button ng-click="upload(task)">Edit</button>
                             <button ng-click="showModalInformativo(task.id)">Delete</button>
                         </td>
@@ -82,7 +82,7 @@
                         <td></td>
                         <td> {{ task.isCompleted ? 'Completed' : 'Waiting' }} </td>
                         <td>
-                            <button ng-click="completed(task)">Finish</button>
+                            <button ng-click="completed(task)" ng-show="!task.isCompleted">Finish</button>
                             <button ng-click="upload(task)">Edit</button>
                             <button ng-click="showModalInformativo(task.id)">Delete</button>
                         </td>

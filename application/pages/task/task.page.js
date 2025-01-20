@@ -27,7 +27,6 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     $scope.showModal = function () {
         modal.classList.add('active');
         modalBackground.classList.add('active');
-        $scope.taskModel = {};
     }
 
     $scope.hideModal = function () {
