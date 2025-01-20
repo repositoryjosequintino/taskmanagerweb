@@ -181,6 +181,19 @@
     font-weight: bold;
 }
 
+#modal form .modal-content .row .form-input label span {
+    color: #c62828;
+}
+
+#modal form .modal-content .row .form-input input.error {
+    border: #c62828 solid 2px;
+}
+
+#modal form .modal-content .row .form-input input.error:focus {
+    border: #c62828 solid 2px;
+    color: #c62828;
+}
+
 #modal form .modal-content .row .form-input input {
     width: 100%;
     height: 40px;

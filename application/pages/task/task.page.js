@@ -27,6 +27,7 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     $scope.showModal = function () {
         modal.classList.add('active');
         modalBackground.classList.add('active');
+        $scope.taskModel = {};
     }
 
     $scope.hideModal = function () {
@@ -44,6 +45,11 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     $scope.create = function () {
 
         if (!$scope.taskModel.id) {
+
+            if ($scope.formularioTask.title.$error.required) {
+                console.log("Preencher title....");
+            }
+
             const taskModel = {
                 title: $scope.taskModel.title,
                 description: $scope.taskModel.description,
@@ -52,7 +58,7 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
                 console.log('Tarefa criada com sucesso', response.data);
                 $scope.findAll();
                 $scope.hideModal();
-                this.clearFormulario();
+                $scope.taskModel = {};
             }, function (error) {
                 alert(JSON.stringify(error));
                 console.error('Erro ao criar tarefa', error);
@@ -62,7 +68,7 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
                 console.log('Tarefa atualizada com sucesso', response.data);
                 $scope.findAll();
                 $scope.hideModal();
-                this.clearFormulario();
+                $scope.taskModel = {};
             });
         }
 
