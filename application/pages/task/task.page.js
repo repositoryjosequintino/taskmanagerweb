@@ -19,8 +19,11 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     const modal = document.getElementById('modal');
     const modalBackground = document.querySelector('.modal-background');
 
+    const modalInformativo = document.getElementById('modal-informativo');
+
     $scope.taskModel = {};
     $scope.taskArray = [];
+    $scope.taskID = 0;
 
     $scope.showModal = function () {
         modal.classList.add('active');
@@ -30,6 +33,13 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     $scope.hideModal = function () {
         modal.classList.remove('active');
         modalBackground.classList.remove('active');
+        modalInformativo.classList.remove('active');
+    }
+
+    $scope.showModalInformativo = function (idParameter) {
+        $scope.taskID = idParameter;
+        modalInformativo.classList.add('active');
+        modalBackground.classList.add('active');
     }
 
     $scope.create = function () {
@@ -66,7 +76,6 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
     $scope.findAll = function () {
         taskService.findAll().then(function (response) {
             $scope.taskArray = response.data;
-            console.log($scope.taskArray);
         }, function (error) {
             console.error('Erro ao buscar tarefas', error);
         });
@@ -81,6 +90,7 @@ angular.module('taskManagerApplicationModule').controller('taskController', func
         taskService.delete(idParameter).then(function (response) {
             console.log(response.data);
             $scope.findAll();
+            $scope.hideModal();
         });
     }
 
