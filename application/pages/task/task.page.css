@@ -74,7 +74,7 @@
 }
 
 .task-box-datatable .content-box .content table thead {
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     color: #18345e;
     font-weight: bold;
 }
@@ -91,7 +91,7 @@
 
 .task-box-datatable .content-box .content table tbody tr:hover {
     background-color: #f9f9f9;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .task-box-datatable .content-box .content table tbody tr td {
